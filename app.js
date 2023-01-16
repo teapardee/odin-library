@@ -1,3 +1,13 @@
+const addButton = document.querySelector('.add-btn');
+addButton.addEventListener('click', () => {
+  document.getElementById('modal').style.display = 'flex';
+});
+
+const closeButton = document.querySelector('.close-btn');
+closeButton.addEventListener('click', () => {
+  document.getElementById('modal').style.display = 'none';
+});
+
 let myLibrary = [];
 
 function Book(title, author, pageCount, read) {
@@ -11,7 +21,9 @@ function Book(title, author, pageCount, read) {
   };
 }
 
-function addBookToLibrary() {}
+function addBookToLibrary() {
+  newbook = new Book();
+}
 
 const theHobbit = new Book(
   'The Hobbit',

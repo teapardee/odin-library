@@ -5,15 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <script src="books.js" defer></script>
+    <script src="app.js" defer></script>
     <title>Document</title>
   </head>
 
   <body>
     <header>Digital Library</header>
+    <button class="add-btn">+ add book</button>
     <div id="modal">
       <form action="#" id="form">
         <span id="form-title">Add Book</span>
+        <button class="close-btn">x</button>
         <div class="input-field">
           <label for="title"><span>Title</span></label>
         </div>
@@ -35,8 +37,11 @@
           <label for="read"><span>Read?</span></label>
         </div>
         <input type="checkbox" id="read" name="read" />
+        <div class="btn-container">
+          <button type="reset" class="reset-btn">Reset</button>
+          <button type="submit" class="submit-btn">Add Book</button>
+        </div>
       </form>
     </div>
-    <button class="button">+ add book</button>
   </body>
 </html>
