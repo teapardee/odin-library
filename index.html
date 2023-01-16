@@ -11,6 +11,32 @@
 
   <body>
     <header>Digital Library</header>
+    <div id="modal">
+      <form action="#" id="form">
+        <span id="form-title">Add Book</span>
+        <div class="input-field">
+          <label for="title"><span>Title</span></label>
+        </div>
+        <input type="text" id="title" name="title" placeholder="Book Title" />
+        <div class="input-field">
+          <label for="author"><span>Author</span></label>
+        </div>
+        <input type="text" id="author" name="author" placeholder="Author" />
+        <div class="input-field">
+          <label for="pageCount"><span>Page Count</span></label>
+        </div>
+        <input
+          type="text"
+          id="pageCount"
+          name="pageCount"
+          placeholder="Page Count"
+        />
+        <div class="input-field">
+          <label for="read"><span>Read?</span></label>
+        </div>
+        <input type="checkbox" id="read" name="read" />
+      </form>
+    </div>
     <button class="button">+ add book</button>
   </body>
 </html>

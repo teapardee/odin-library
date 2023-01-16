@@ -30,7 +30,69 @@ button {
 .button {
   display: flex;
   text-align: center;
+  cursor: pointer;
   font-size: 2rem;
   padding: 1rem;
   border: 1px lightgrey solid;
+}
+
+.button:hover {
+  border: 1px black solid;
+}
+
+/* Modal */
+
+#modal {
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#form {
+  display: grid;
+  grid-template-rows: repeat(11, 1fr);
+  flex-direction: column;
+  min-width: 20vw;
+  min-height: 20vw;
+}
+
+#form-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+input,
+span {
+  font-size: 1rem;
+}
+
+#form > input {
+  margin: 5px 0 5px 0;
+  min-height: 3rem;
+  padding-left: 10px;
+}
+
+.input-field {
+  display: flex;
+  align-self: center;
+  justify-self: flex-start;
+  font-weight: bold;
+}
+
+input:placeholder-shown {
+  padding-left: 10px;
+}
+
+.input-field:last-of-type {
+  display: flex;
+  justify-self: center;
 }
