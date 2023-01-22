@@ -63,24 +63,39 @@ th {
 
 tr {
   display: grid;
-  grid-template: 4rem / 2fr 2fr 2fr 1fr;
+  grid-template: 4rem / 2fr 2fr 2fr 1fr 4rem 4rem;
   font-size: 1.5rem;
-  place-items: center;
 }
 
-td,
-th {
-  padding-left: 1rem;
+td {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100%;
 }
 
 th:nth-of-type(-n + 2),
 td:nth-of-type(-n + 2) {
+  justify-content: start;
   justify-self: start;
+  padding-left: 1rem;
 }
 
-tr:hover {
+tr:hover td:nth-of-type(-n + 4) {
   background-color: black;
   color: white;
+}
+
+img {
+  justify-self: center;
+  align-self: center;
+  height: 2rem;
+  cursor: pointer;
+}
+
+img:hover {
+  background-color: white;
+  scale: 1.2;
 }
 
 /* Modal */

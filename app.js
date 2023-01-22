@@ -44,15 +44,23 @@ for (i = 0; i < 1; i++) {
   var cellAuthor = document.createElement('td');
   var cellPageCount = document.createElement('td');
   var cellRead = document.createElement('td');
+  var editBtn = document.createElement('img');
+  var deleteBtn = document.createElement('img');
 
   cellTitle.innerHTML = `${myLibrary[i].title}`;
   cellAuthor.innerHTML = `${myLibrary[i].author}`;
   cellPageCount.innerHTML = `${myLibrary[i].pageCount} pages`;
   cellRead.innerHTML = myLibrary[i].read ? 'Yes' : 'No';
+  editBtn.src = './assets/Edit.svg';
+  editBtn.alt = 'edit.svg';
+  deleteBtn.src = './assets/Delete.svg';
+  deleteBtn.alt = 'delete.svg';
 
   table.appendChild(tableRow);
   tableRow.appendChild(cellTitle);
   tableRow.appendChild(cellAuthor);
   tableRow.appendChild(cellPageCount);
   tableRow.appendChild(cellRead);
+  tableRow.appendChild(editBtn);
+  tableRow.appendChild(deleteBtn);
 }
