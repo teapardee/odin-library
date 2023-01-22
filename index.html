@@ -22,29 +22,39 @@
     <div class="add-btn">+ Add Book</div>
     <div id="modal">
       <form action="#" id="form">
-        <span id="form-title">Add Book</span>
+        <span id="form-header">Add Book</span>
         <button class="close-btn">x</button>
         <div class="input-field">
           <label for="title"><span>Title</span></label>
         </div>
-        <input type="text" id="title" name="title" placeholder="Book Title" />
+        <input
+          type="text"
+          id="form-title"
+          name="title"
+          placeholder="Book Title"
+        />
         <div class="input-field">
           <label for="author"><span>Author</span></label>
         </div>
-        <input type="text" id="author" name="author" placeholder="Author" />
+        <input
+          type="text"
+          id="form-author"
+          name="author"
+          placeholder="Author"
+        />
         <div class="input-field">
           <label for="pageCount"><span>Page Count</span></label>
         </div>
         <input
           type="text"
-          id="pageCount"
+          id="form-pageCount"
           name="pageCount"
           placeholder="Page Count"
         />
         <div class="input-field">
           <label for="read"><span>Read?</span></label>
         </div>
-        <input type="checkbox" id="read" name="read" />
+        <input type="checkbox" id="form-read" name="read" />
         <div class="btn-container">
           <button type="reset" class="reset-btn">Reset</button>
           <button type="submit" class="submit-btn">Add Book</button>

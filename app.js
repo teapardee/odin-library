@@ -1,3 +1,4 @@
+// Event Listeners
 const addButton = document.querySelector('.add-btn');
 addButton.addEventListener('click', addBookToLibrary);
 
@@ -6,6 +7,11 @@ closeButton.addEventListener('click', () => {
   document.getElementById('modal').style.display = 'none';
 });
 
+// const deleteButton = document.querySelector('.delete-btn');
+// deleteButton.addEventListener('click', deleteBook());
+
+// Library
+
 let myLibrary = [
   {
     title: 'The Hobbit',
@@ -13,7 +19,15 @@ let myLibrary = [
     pageCount: '295',
     read: false,
   },
+  {
+    title: 'Rework',
+    author: 'Jason Fried',
+    pageCount: '186',
+    read: true,
+  },
 ];
+
+// Adding Books to Library
 
 function Book(title, author, pageCount, read) {
   this.title = title;
@@ -31,13 +45,11 @@ function addBookToLibrary() {
   newbook = new Book();
 }
 
-const theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', '295', 'N');
-
-console.log(theHobbit.info());
+// Display Books
 
 var table = document.querySelector('.main-container');
 
-for (i = 0; i < 1; i++) {
+for (i = 0; i < myLibrary.length; i++) {
   var tableRow = document.createElement('tr');
 
   var cellTitle = document.createElement('td');
@@ -51,10 +63,20 @@ for (i = 0; i < 1; i++) {
   cellAuthor.innerHTML = `${myLibrary[i].author}`;
   cellPageCount.innerHTML = `${myLibrary[i].pageCount} pages`;
   cellRead.innerHTML = myLibrary[i].read ? 'Yes' : 'No';
+
   editBtn.src = './assets/Edit.svg';
   editBtn.alt = 'edit.svg';
+  editBtn.className = '.edit-btn';
+  editBtn.dataset.indexNumber = i;
+  editBtn.addEventListener('click', (e) => {
+    editBook(e.currentTarget.getAttribute('data-index-number'));
+  });
+
   deleteBtn.src = './assets/Delete.svg';
   deleteBtn.alt = 'delete.svg';
+  deleteBtn.className = '.delete-btn';
+  deleteBtn.dataset.indexNumber = i;
+  deleteBtn.addEventListener('click', deleteBook);
 
   table.appendChild(tableRow);
   tableRow.appendChild(cellTitle);
@@ -63,4 +85,25 @@ for (i = 0; i < 1; i++) {
   tableRow.appendChild(cellRead);
   tableRow.appendChild(editBtn);
   tableRow.appendChild(deleteBtn);
+}
+
+// Edit Book
+
+function editBook(indexValue) {
+  document.getElementById('modal').style.display = 'flex';
+  console.log(indexValue);
+  document.getElementById('form-title').value = myLibrary[indexValue].title;
+  document.getElementById('form-author').value = myLibrary[indexValue].author;
+  document.getElementById('form-pageCount').value =
+    myLibrary[indexValue].pageCount;
+  document.getElementById('form-read').checked = myLibrary[indexValue].read;
+
+  // titleInput.value = buttonID;
+}
+
+function deleteBook(buttonID) {
+  console.log('test');
+  //   const bookForm = document.getElementById('form')
+  //   const titleInput = bookForm.getElementById('title')
+  // titleInput.value =
 }

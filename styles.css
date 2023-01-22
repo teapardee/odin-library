@@ -95,7 +95,7 @@ img {
 
 img:hover {
   background-color: white;
-  scale: 1.2;
+  scale: 1.5;
 }
 
 /* Modal */
@@ -136,7 +136,7 @@ img:hover {
   font-weight: bold;
 }
 
-#form-title {
+#form-header {
   display: flex;
   justify-content: center;
   align-items: center;
