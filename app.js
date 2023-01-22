@@ -6,7 +6,14 @@ closeButton.addEventListener('click', () => {
   document.getElementById('modal').style.display = 'none';
 });
 
-let myLibrary = [];
+let myLibrary = [
+  {
+    title: 'The Hobbit',
+    author: 'J.R.R. Tolkien',
+    pageCount: '295',
+    read: false,
+  },
+];
 
 function Book(title, author, pageCount, read) {
   this.title = title;
@@ -24,11 +31,28 @@ function addBookToLibrary() {
   newbook = new Book();
 }
 
-const theHobbit = new Book(
-  'The Hobbit',
-  'J.R.R. Tolkien',
-  '295',
-  'not read yet'
-);
+const theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', '295', 'N');
 
 console.log(theHobbit.info());
+
+var table = document.querySelector('.main-container');
+
+for (i = 0; i < 1; i++) {
+  var tableRow = document.createElement('tr');
+
+  var cellTitle = document.createElement('td');
+  var cellAuthor = document.createElement('td');
+  var cellPageCount = document.createElement('td');
+  var cellRead = document.createElement('td');
+
+  cellTitle.innerHTML = `${myLibrary[i].title}`;
+  cellAuthor.innerHTML = `${myLibrary[i].author}`;
+  cellPageCount.innerHTML = `${myLibrary[i].pageCount} pages`;
+  cellRead.innerHTML = myLibrary[i].read ? 'Yes' : 'No';
+
+  table.appendChild(tableRow);
+  tableRow.appendChild(cellTitle);
+  tableRow.appendChild(cellAuthor);
+  tableRow.appendChild(cellPageCount);
+  tableRow.appendChild(cellRead);
+}
