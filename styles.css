@@ -13,6 +13,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 100px 0 100px;
 }
 
 header {
@@ -22,6 +23,8 @@ header {
   height: 10vh;
   padding: 3rem;
 }
+
+/* Add Button */
 
 button {
   all: unset;
@@ -34,11 +37,48 @@ button {
   cursor: pointer;
   font-size: 2rem;
   padding: 1rem;
-  border: 1px lightgrey solid;
+}
+
+.add-btn:hover {
+  background-color: rgba(0, 128, 0, 0.2);
 }
 
 .button:hover {
   border: 1px black solid;
+}
+
+/* Main Container */
+
+.main-container {
+  min-width: 100%;
+  margin-top: 20px;
+}
+
+th {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+tr {
+  display: grid;
+  grid-template: 4rem / 2fr 2fr 2fr 1fr;
+  font-size: 1.5rem;
+  place-items: center;
+}
+
+td,
+th {
+  padding-left: 1rem;
+}
+
+th:first-of-type,
+td:first-of-type {
+  justify-self: start;
+}
+
+tr:hover {
+  background-color: black;
+  color: white;
 }
 
 /* Modal */

@@ -1,7 +1,5 @@
 const addButton = document.querySelector('.add-btn');
-addButton.addEventListener('click', () => {
-  document.getElementById('modal').style.display = 'flex';
-});
+addButton.addEventListener('click', addBookToLibrary);
 
 const closeButton = document.querySelector('.close-btn');
 closeButton.addEventListener('click', () => {
@@ -22,6 +20,7 @@ function Book(title, author, pageCount, read) {
 }
 
 function addBookToLibrary() {
+  document.getElementById('modal').style.display = 'flex';
   newbook = new Book();
 }
 
