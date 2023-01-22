@@ -33,10 +33,12 @@ button {
 
 .add-btn {
   display: flex;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  height: 4rem;
+  min-width: 100%;
   cursor: pointer;
-  font-size: 2rem;
-  padding: 1rem;
 }
 
 .add-btn:hover {
@@ -71,8 +73,8 @@ th {
   padding-left: 1rem;
 }
 
-th:first-of-type,
-td:first-of-type {
+th:nth-of-type(-n + 2),
+td:nth-of-type(-n + 2) {
   justify-self: start;
 }
 
